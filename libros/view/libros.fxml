@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="1101.0" style="-fx-background-color: #9DF5CE#9DF5CE;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="libros.controller.LibrosController">
+   <children>
+      <Pane fx:id="panelFormularioLibro" layoutX="19.0" layoutY="93.0" prefHeight="416.0" prefWidth="436.0" visible="false">
+         <children>
+            <Button fx:id="botonCancelarFormulario" layoutX="150.0" layoutY="296.0" mnemonicParsing="false" onAction="#cancelarFormulario" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #4295F5#4295F5;" text="Cancelar" textFill="WHITE" />
+            <Button fx:id="botonAceptarFormulario" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#aceptarFormulario" prefHeight="46.0" prefWidth="133.0" style="-fx-background-color: #4295F5#4295F5;" text="Aceptar" textFill="WHITE" />
+            <Label layoutX="35.0" layoutY="33.0" prefHeight="40.0" prefWidth="49.0" text="Titulo">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tituloFormulario" layoutX="90.0" layoutY="33.0" prefHeight="40.0" prefWidth="170.0" promptText="Titulo del libro" />
+            <Label layoutX="35.0" layoutY="95.0" prefHeight="40.0" prefWidth="49.0" text="Autor">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="autorFormulario" layoutX="90.0" layoutY="95.0" prefHeight="40.0" prefWidth="170.0" promptText="Autor del libro" />
+            <TextField fx:id="precioFormulario" layoutX="90.0" layoutY="154.0" prefHeight="40.0" prefWidth="170.0" promptText="Precio del libro" />
+            <TextField fx:id="cantidadFormulario" layoutX="90.0" layoutY="216.0" prefHeight="40.0" prefWidth="170.0" promptText="Cantidad de libros" />
+            <Label layoutX="35.0" layoutY="154.0" prefHeight="40.0" prefWidth="49.0" text="Precio">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="216.0" prefHeight="40.0" prefWidth="70.0" text="Cantidad">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="panelInformacionLibro" layoutX="29.0" layoutY="86.0" prefHeight="416.0" prefWidth="421.0" visible="false">
+         <children>
+            <Pane fx:id="panelCambioPrecio" layoutX="19.0" layoutY="290.0" prefHeight="54.0" prefWidth="263.0" visible="false">
+               <children>
+                  <Button fx:id="botonAceptarCambioPrecio" layoutX="165.0" layoutY="8.0" mnemonicParsing="false" onAction="#cambiarPrecio" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: #4295F5#4295F5;" text="Aceptar" textFill="WHITE" />
+                  <TextField fx:id="campoCambioPrecio" layoutX="13.0" layoutY="9.0" prefHeight="40.0" prefWidth="140.0" promptText="Nuevo precio" />
+               </children>
+            </Pane>
+            <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="18.0" prefHeight="40.0" prefWidth="49.0" text="ID" textFill="#1d1d1e">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="66.0" prefHeight="40.0" prefWidth="49.0" text="Titulo" textFill="#1d1d1e">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="116.0" prefHeight="40.0" prefWidth="49.0" text="Autor" textFill="#1d1d1e">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="173.0" prefHeight="40.0" prefWidth="49.0" text="Precio" textFill="#1d1d1e">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="26.0" layoutY="225.0" prefHeight="40.0" prefWidth="70.0" text="Cantidad" textFill="#1d1d1e">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="botonCambioPrecio" layoutX="26.0" layoutY="290.0" mnemonicParsing="false" onAction="#activarFormularioCambioPrecio" prefHeight="46.0" prefWidth="249.0" style="-fx-background-color: #4295F5#4295F5;" text="Cambiar precio" textFill="WHITE" />
+            <Label fx:id="cantidad" layoutX="122.0" layoutY="225.0" prefHeight="40.0" prefWidth="260.0">
+               <font>
+                  <Font name="Liberation Mono" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="id" layoutX="122.0" layoutY="18.0" prefHeight="40.0" prefWidth="260.0">
+               <font>
+                  <Font name="Liberation Mono" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="autor" layoutX="122.0" layoutY="116.0" prefHeight="40.0" prefWidth="260.0">
+               <font>
+                  <Font name="Liberation Mono" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="precio" layoutX="122.0" layoutY="173.0" prefHeight="40.0" prefWidth="260.0">
+               <font>
+                  <Font name="Liberation Mono" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="titulo" layoutX="122.0" layoutY="66.0" prefHeight="40.0" prefWidth="260.0">
+               <font>
+                  <Font name="Liberation Mono" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="botonEliminar" layoutX="26.0" layoutY="353.0" mnemonicParsing="false" onAction="#eliminarLibro" prefHeight="46.0" prefWidth="249.0" style="-fx-background-color: #4295F5#4295F5;" text="Eliminar" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane layoutX="467.0" layoutY="33.0" prefHeight="503.0" prefWidth="607.0">
+         <children>
+            <Button fx:id="botonAgregarLibro" layoutX="21.0" layoutY="405.0" mnemonicParsing="false" onAction="#mostrarFormularioLibro" prefHeight="46.0" prefWidth="177.0" style="-fx-background-color: #4295F5#4295F5;" text="Agregar nuevo libro" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <ListView fx:id="listadoLibros" layoutX="21.0" layoutY="32.0" onMouseClicked="#mostrarLibro" prefHeight="356.0" prefWidth="566.0" />
+            <Pane layoutX="198.0" layoutY="400.0" prefHeight="103.0" prefWidth="391.0">
+               <children>
+                  <Label layoutX="125.0" layoutY="6.0" text="FILTRAR LIBROS" textFill="#1d1d1e" />
+                  <Label layoutX="30.0" layoutY="69.0" text="Titulo" />
+                  <Label layoutX="31.0" layoutY="40.0" text="Autor" />
+                  <Slider fx:id="sliderFiltroMaximo" blockIncrement="0.1" layoutX="251.0" layoutY="40.0" onDragDetected="#modificarPrecioMaximo" />
+                  <TextField fx:id="filtroTitulo" layoutX="71.0" layoutY="65.0" onKeyTyped="#recargarListadoLibros" />
+                  <TextField fx:id="filtroAutor" layoutX="71.0" layoutY="36.0" onKeyTyped="#recargarListadoLibros" />
+                  <Label layoutX="273.0" layoutY="14.0" text="Precio Maximo" textFill="#1d1d1e" />
+                  <Label fx:id="filtroPrecioMaxValor" alignment="CENTER" layoutX="278.0" layoutY="57.0" prefHeight="24.0" prefWidth="95.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="botonLimpiarFiltro" layoutX="287.0" layoutY="91.0" mnemonicParsing="false" onAction="#limpiarFiltros" text="Limpiar" />
+               </children>
+            </Pane>
+            <Label layoutX="221.0" layoutY="2.0" text="Listado de libros" textFill="#1d1d1e">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="29.0" layoutY="37.0" text="LIBRERIA RAUL RAULITO" textFill="#1d1d1e">
+         <font>
+            <Font name="NimbusRoman-Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="mensaje" layoutX="56.0" layoutY="528.0" />
+   </children>
+</Pane>
